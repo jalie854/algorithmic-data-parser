@@ -5,7 +5,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONPATH=/app/src
 
 WORKDIR /app
-COPY pyproject.toml README.md ./
+COPY pyproject.toml README.md requirements-api.txt ./
 COPY src ./src
 COPY api ./api
 RUN pip install --no-cache-dir -e . && pip install --no-cache-dir -r requirements-api.txt
