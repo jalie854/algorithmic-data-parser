@@ -43,3 +43,8 @@ python -m unittest discover -s tests -v
 
 The output document itself necessarily grows with the number of valid records;
 the parser's working memory is bounded by the largest input line plus I/O buffers.
+
+
+## HTTP service
+
+The package also exposes an optional authenticated HTTP API for Knight. See [HTTP API documentation](docs/HTTP_API.md) and run it with `python -m algorithmic_data_parser.service`. The service uses the same `AdvancedDataParser` implementation as the CLI and requires `KNIGHT_PARSER_API_KEY`.
