@@ -28,8 +28,8 @@ The request body is limited to 2 MiB. The parser validates records using the sam
 ```json
 {
   "summary": {
-    "total_lines": 2,
-    "total_successfully_parsed": 2,
+    "total_lines": 1,
+    "total_successfully_parsed": 1,
     "total_corrupted_records": 0
   },
   "data": [
