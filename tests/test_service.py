@@ -65,7 +65,8 @@ class ParserServiceTests(unittest.TestCase):
     def test_parse_rejects_oversized_body(self):
         with patch.dict(os.environ, {"KNIGHT_PARSER_API_KEY": "test-secret"}):
             status, payload = self.request(
-                "POST", "/v1/parse", b"x" * (2 * 1024 * 1024 + 1)
+                "POST", "/v1/parse",
+                headers={"Content-Length": str(2 * 1024 * 1024 + 1)}
             )
         self.assertEqual(status, 413)
         self.assertIn("error", payload)
